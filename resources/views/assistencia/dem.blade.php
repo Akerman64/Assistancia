@@ -76,49 +76,168 @@
 
     <div class="container" data-aos="fade-up">
 
+
+
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150" style="padding: 70px;">
             <div class="col-xl-6 col-lg-8">
-                <h1 class="logo me-auto me-lg-0"><span>ADMIN PANEL<span></span></h1>
+                <h1 class="logo me-auto me-lg-0"><a href="#about">Assistencia<span></span></a></h1>
             </div>
         </div>
 
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-6 col-lg-8">
           <h1>Réclamations</h1>
-          <h4>Accéder à toutes les demandes à votre service</h4>
+          <h2>Services Clients</h2>
         </div>
       </div>
 
       <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-        <div class="col-xl-4 col-md-6">
+
+        <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-bar-chart-box-line"></i>
-            <h3><a href="{{ route('details') }}"> Details </a></h3>
+            <h3><a href="{{ route('dem') }}"> Affichage </a></h3>
           </div>
         </div>
-        <div class="col-xl-4 col-md-6">
-          <div class="icon-box">
-            <i class="ri-calendar-todo-line"></i>
-            <h3><a href="{{route('tableau')}}">Tableau de Bord</a></h3>
-          </div>
-        </div>
+
       </div>
     </div>
   </section><!-- End Hero -->
 
   <main id="main">
 
+    <!-- ======= About Section ======= -->
+    <style type="text/css">
+
+        td{
+            padding:50px;
+            padding-right:50px;
+            color: white;
+        }
+        table{
+            padding-top:25px;
+            margin-top:70px;
+            align-items: center;
+            margin-left: 25px;
+        }
+        .tye{
+            background-color: grey;
+        }
+        .tye1{
+            background-color: black;
+        }
+
+      </style>
+
+
+
+      <section style="padding-top: 60px;">
+              <p style="margin-left: 510px;">Détails de vos demandes:</p>
+              <div class="container" style="margin-left: 150px;">
+
+
+                  <table>
+
+                    <tr class="tye">
+                        <td> Administrateur </td>
+                        <td> En attente </td>
+                        <td> Rejetée </td>
+                        <td> En cours de traitement </td>
+                        <td> Traitée </td>
+                    </tr>
+
+                    @foreach ($data as $user )
+                        <tr class="tye1">
+                            <td>  {{ $user->nom_admin }}</td>
+                            <td> {{ $count2 }} </td>
+                            <td> {{ $count1 }}</td>
+                            <td>{{ $count3 }}</td>
+                            <td>{{ $count }}</td>
+                        </tr>
+                    @endforeach
+
+
+                </table>
+
+              </div>
+      </section>
+
+    <!-- ======= Clients Section ======= -->
+
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Gp<span>.</span></h3>
+              <p>
+                A108 Adam Street <br>
+                NY 535022, USA<br><br>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
 
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>Gp</span></strong>. All Rights Reserved
       </div>
-
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
     </div>
   </footer><!-- End Footer -->
 

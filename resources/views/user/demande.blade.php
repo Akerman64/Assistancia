@@ -38,10 +38,10 @@
   ======================================================== -->
 </head>
 
-<body>
+<body style="background-color: whitesmoke;">
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
+  <header id="header" class="fixed-top " style="background-color:rgb(66, 63, 63)">
     <div class="container d-flex align-items-center justify-content-lg-between" >
 
 
@@ -63,7 +63,7 @@
                     @endauth
                 </div>
       @endif
-      <a href="#about" class="get-started-btn scrollto" style="margin-right: 270px">Get Started</a>
+      <a href="{{ route('userHome')}}" class="get-started-btn scrollto" style="margin-right: 270px">Get Started</a>
 
     </div>
 
@@ -71,58 +71,22 @@
   </header><!-- End Header -->
 
 
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center justify-content-center">
-
-
-    <div class="container" data-aos="fade-up">
-
-
-
-        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150" style="padding: 70px;">
-            <div class="col-xl-6 col-lg-8">
-                <h1 class="logo me-auto me-lg-0"><a href="#about">Assistencia<span></span></a></h1>
-            </div>
-        </div>
-
-        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
-        <div class="col-xl-6 col-lg-8">
-          <h1>Réclamations</h1>
-          <h2>Services Clients</h2>
-        </div>
-      </div>
-
-      <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-store-line"></i>
-            <h3><a href="#about">Accueil</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-bar-chart-box-line"></i>
-            <h3><a href="{{ route('demande') }}"> Demandes </a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-calendar-todo-line"></i>
-            <h3><a href="">Tableau de Bord</a></h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- End Hero -->
-
   <main id="main">
 
     <!-- ======= About Section ======= -->
 
 
 
-    <section style="padding-top: 60px;">
+    <section style="padding-top: 50px;">
+      <div class="container">
+        <div class="row justify-content-center" style="padding: 70px; padding-bottom: 35px">
+          <div class="col-xl-6 col-lg-8">
+              <h1 style="text-align: center; font-weight:bold; font-size:50px">Formulaire de demande</h1>
+          </div>
+        </div>
+
+
+
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
@@ -130,7 +94,7 @@
                         <div class="card-header" style="color: black;">
                             Passez votre demande
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="padding: 50px;">
                             @if(Session::get('message-sent'))
                                 <div class="alert alert-success" role="alert">
                                     {{ Session::get('message-sent') }}
@@ -142,163 +106,24 @@
                                     <label for="demande">Demande</label>
                                     <textarea name="demande" class="form-control" cols="30" rows="10"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary" style="color:black; margin-left:220px;">Envoyer</button>
-                            </form>
+                                <button type="submit" class="btn btn-primary" style="color:black; margin-left:200px; width:200px">Envoyer</button>
+                              </form>
+                              <a href="{{ route('status') }}" class="alert alert-success" style="margin-left: 400px; width: 150px;"> Status </a>
+
+                          </div>
                         </div>
-                        <div class="card-body">
-                            <a href="{{ route('status') }}" class="alert alert-success" style="margin-left: 44%; padding-top:15px;"> Status </a>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Contactez-nous</p>
-        </div>
-
-        <div>
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="row mt-5">
-
-          <div class="col-lg-4">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@example.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-8 mt-5 mt-lg-0">
-
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
+  </main>
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>Gp<span>.</span></h3>
-              <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
+    <div class="container mt-5">
       <div class="copyright">
         &copy; Copyright <strong><span>Gp</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->

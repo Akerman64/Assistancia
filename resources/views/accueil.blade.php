@@ -45,23 +45,23 @@
 
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+      <a href="{{ route('userHome') }}" class="get-started-btn scrollto">Get Started</a>
       @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <div class="hidden fixed top-0 right-0 px-2 py-4 sm:block">
                     @auth
                         <x-app-layout>
 
                         </x-app-layout>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline get-started-btn scrollto" style="margin-left: 250px;">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline get-started-btn scrollto" style="margin-left: 50px;">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline get-started-btn scrollto" style="margin-left: 130px;">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline get-started-btn scrollto" style="margin-left: 10px;">Register</a>
                         @endif
                     @endauth
                 </div>
       @endif
-      <a href="#about" class="get-started-btn scrollto" style="margin-right: 270px">Get Started</a>
+
 
     </div>
 
@@ -75,51 +75,41 @@
 
 
     <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center " data-aos="fade-up" data-aos-delay="150" style="padding: 50px; margin-top:100px;">
+            <div class="col-10 ">
+                <h1 class="logo me-auto me-lg-0">Bienvenue dans votre application de gestion des réclammations d'<span>Assistancia</span></a></h1>
+              <br>
+              <h4  class="justify-content-center py-4" style="color: whitesmoke;">
+                Toutes vos demandes seront traitées et répondues dans les plus brefs délais.
+            </>
+              </div>
 
-        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150" style="padding: 70px;">
-            <div class="col-xl-6 col-lg-8">
-                <h1 class="logo me-auto me-lg-0"><span>ADMIN PANEL<span></span></h1>
-            </div>
         </div>
 
-        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
-        <div class="col-xl-6 col-lg-8">
-          <h1>Réclamations</h1>
-          <h4>Accéder à toutes les demandes à votre service</h4>
-        </div>
-      </div>
-
-      <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+      <div class="row gy-4 justify-content-center mb-5" data-aos="zoom-in" data-aos-delay="250">
         <div class="col-xl-4 col-md-6">
           <div class="icon-box">
-            <i class="ri-bar-chart-box-line"></i>
-            <h3><a href="{{ route('details') }}"> Details </a></h3>
+            <i class="ri-store-line"></i>
+            <h3><a href="{{ route('userHome') }}">Accueil</a></h3>
           </div>
         </div>
         <div class="col-xl-4 col-md-6">
           <div class="icon-box">
-            <i class="ri-calendar-todo-line"></i>
-            <h3><a href="{{route('tableau')}}">Tableau de Bord</a></h3>
+            <i class="ri-bar-chart-box-line"></i>
+            <h3><a href="{{ route('demande') }}"> Demandes </a></h3>
           </div>
         </div>
       </div>
     </div>
   </section><!-- End Hero -->
 
-  <main id="main">
-
-
-  </main><!-- End #main -->
-
   <!-- ======= Footer ======= -->
   <footer id="footer">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Gp</span></strong>. All Rights Reserved
+        </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Gp</span></strong>. All Rights Reserved
-      </div>
-
-    </div>
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>

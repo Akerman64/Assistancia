@@ -15,8 +15,15 @@ class HomeController extends Controller
         if(!empty(Auth::user()) && Auth::user()->usertype == 1)
         {
             return view('admin.home');
-        } else {
+        }
+        elseif(!empty(Auth::user()) && Auth::user()->usertype == 2){
+            return view('assistancia.home');
+
+        }elseif(!empty(Auth::user()) && Auth::user()->usertype == 0){
             return view('user.home');
+        }
+        else {
+            return view('accueil');
         }
     }
 
@@ -34,6 +41,7 @@ class HomeController extends Controller
         $user = User::where('usertype', 1)->get();
 
         $data->user_id = Auth::id();
+
         $data->demande = $request->demande;
         $data->save();
 
